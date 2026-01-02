@@ -18,6 +18,34 @@
     <div class="bg-shape shape-1"></div>
     <div class="bg-shape shape-2"></div>
 
+    <!-- Gamification Sticky Bar -->
+    <div class="gamification-bar">
+        <div class="game-stats">
+            <!-- Level -->
+            <div class="stat-item" title="Current Level">
+                <span>LVL</span>
+                <div class="level-badge" id="level-display">1</div>
+            </div>
+
+            <!-- XP Bar -->
+            <div class="stat-item xp-container">
+                <div class="xp-text" id="xp-text">0 / 100 XP</div>
+                <div class="xp-progress-bar">
+                    <div class="xp-fill" id="xp-bar-fill"></div>
+                </div>
+            </div>
+
+            <!-- Coins -->
+            <div class="stat-item coin-display" title="Coins Collected">
+                <span>🪙</span>
+                <span id="coins-display">50</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Simulation Button -->
+    <button id="simulate-btn">Simulate Lesson Complete (+20 XP)</button>
+
     <div class="dashboard-container">
         <!-- Header -->
         <header class="dashboard-header">
@@ -74,6 +102,7 @@
             </div>
         </main>
     </div>
+    <script src="game.js"></script>
 </body>
 
 </html>
