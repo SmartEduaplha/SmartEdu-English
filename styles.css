@@ -1,12 +1,18 @@
 /* CSS Variables for the Cyan/White Theme */
 :root {
-  --primary-color: #06b6d4; /* Cyan 500 */
-  --primary-hover: #0891b2; /* Cyan 600 */
-  --bg-gradient-start: #ecfeff; /* Cyan 50 */
-  --bg-gradient-end: #cffafe; /* Cyan 100 */
+  --primary-color: #06b6d4;
+  /* Cyan 500 */
+  --primary-hover: #0891b2;
+  /* Cyan 600 */
+  --bg-gradient-start: #ecfeff;
+  /* Cyan 50 */
+  --bg-gradient-end: #cffafe;
+  /* Cyan 100 */
   --white: #ffffff;
-  --text-main: #1e293b; /* Slate 800 */
-  --text-muted: #64748b; /* Slate 500 */
+  --text-main: #1e293b;
+  /* Slate 800 */
+  --text-muted: #64748b;
+  /* Slate 500 */
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --font-family: 'Inter', sans-serif;
@@ -57,8 +63,15 @@ body {
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(20px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(20px);
+  }
 }
 
 /* Login Card */
@@ -75,8 +88,15 @@ body {
 }
 
 @keyframes slideUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .login-header {
@@ -91,6 +111,7 @@ body {
   margin-bottom: 0.5rem;
   background: linear-gradient(to right, var(--primary-color), var(--primary-hover));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -140,15 +161,15 @@ body {
 }
 
 /* Toggle Logic */
-#role-owner:checked ~ .toggle-slider {
+#role-owner:checked~.toggle-slider {
   transform: translateX(100%);
 }
 
-#role-student:checked + .toggle-option {
+#role-student:checked+.toggle-option {
   color: var(--primary-color);
 }
 
-#role-owner:checked + label + .toggle-option {
+#role-owner:checked+label+.toggle-option {
   color: var(--primary-color);
 }
 
@@ -189,8 +210,8 @@ body {
 }
 
 /* Floating Label Effect */
-.form-input:focus + .form-label,
-.form-input:not(:placeholder-shown) + .form-label {
+.form-input:focus+.form-label,
+.form-input:not(:placeholder-shown)+.form-label {
   top: -10px;
   left: 12px;
   font-size: 0.8rem;
@@ -248,4 +269,168 @@ body {
     margin: 1rem;
     width: calc(100% - 2rem);
   }
+}
+
+/* --- Dashboard Styles --- */
+
+.dashboard-container {
+  width: 100%;
+  max-width: 1200px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Header */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1rem 2rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(10px);
+  margin-bottom: 3rem;
+}
+
+.welcome-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.welcome-text span {
+  color: var(--primary-color);
+}
+
+.logout-btn {
+  padding: 10px 20px;
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.logout-btn:hover {
+  background: var(--primary-color);
+  color: var(--white);
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 3rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.cards-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.year-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  box-shadow: var(--shadow-lg);
+  width: 280px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  display: block;
+}
+
+.year-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 25px -5px rgba(6, 182, 212, 0.15), 0 10px 10px -5px rgba(6, 182, 212, 0.1);
+  border-color: var(--primary-color);
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  background: #ecfeff;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  border-radius: 50%;
+  color: var(--primary-color);
+}
+
+.year-card h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.year-card p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.year-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: var(--primary-color);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.year-card:hover::before {
+  opacity: 1;
+}
+
+/* Animations for cards */
+.year-card:nth-child(1) {
+  animation: slideUp 0.6s ease-out 0.1s backwards;
+}
+
+.year-card:nth-child(2) {
+  animation: slideUp 0.6s ease-out 0.2s backwards;
+}
+
+.year-card:nth-child(3) {
+  animation: slideUp 0.6s ease-out 0.3s backwards;
 }

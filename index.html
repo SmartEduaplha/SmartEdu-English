@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <!-- Background Decoration -->
     <div class="bg-shape shape-1"></div>
@@ -54,5 +56,14 @@
             </div>
         </form>
     </div>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            // In a real app, validation and auth check would happen here
+            window.location.href = 'dashboard.html';
+        });
+    </script>
 </body>
+
 </html>
